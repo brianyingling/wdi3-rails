@@ -1,0 +1,156 @@
+body {
+  color: #fff;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0 auto;
+  background: rgb(61,81,93);
+}
+
+.container {
+  background: rgb(5,26,37);
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 15px;
+
+}
+
+div {
+
+}
+
+div p {
+  border-top: 1px solid black;
+}
+
+nav {
+  margin-left: 55px;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 5px;
+  background: rgb(61,81,93);
+
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+nav ul li:hover {
+  background-color: orange;
+}
+
+h1, h2, h3, input {
+  margin-left: 100px;
+}
+
+input {
+  width: 200px;
+}
+
+hgroup {
+  margin: 10px 0;
+  padding-bottom: 15px;
+  border-radius: 5px;
+
+}
+
+.movie {
+  float: left;
+  vertical-align: top;
+  color: #000;
+  border-radius: 15px;
+
+}
+
+#movie-data {
+  float: right;
+  padding: 10px;
+}
+
+#movie-data, #movie-data div  {
+  width: 650px;
+  background: #fff;
+}
+
+.result {
+  width: 870px;
+  float: left;
+  color: #000;
+  padding: 30px 30px;
+  padding-left: 100px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #fff;
+
+}
+
+.static {
+  font-size: 12px;
+  border: 0px solid #000;
+}
+
+.static p {
+  border: 0px solid #000;
+  font-weight: normal;
+  line-height: 16px;
+  color: #000;
+
+}
+
+.static p:nth-child(1), .question {
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: underline;
+  margin-bottom: 0;
+}
+
+.home_images {
+  display: inline-block;
+  position: relative;
+  min-height: 400px;
+}
+
+.home_images1 {
+  position: absolute;
+  width: 500px;
+}
+
+.home_images2 {
+  position: absolute;
+  left: 500px;
+  width: 300px;
+}
+
+
+
+.question {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.quote {
+  border-bottom: 1px solid #000;
+}
+
+.movie p {
+  font-style: italic;
+}
+
+img {
+  border: 10px solid #fff;
+  border-radius: 15px;
+}
+
+.title {
+  border-bottom: 1px solid black;
+  font-family: arial;
+  font-size: 28px;
+}
+

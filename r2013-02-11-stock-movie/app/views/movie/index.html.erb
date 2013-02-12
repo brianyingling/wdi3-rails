@@ -1,0 +1,23 @@
+<hgroup>
+<h1>Welcome to Movies!</h1>
+<h3>Enter a Movie Title:</h3>
+<form method='get' action='/movie'>
+  <input type='text' id='title' name='title' />
+  <button>Search</button>
+</form>
+</hgroup>
+
+<% if @movie %>
+<div>
+  <div class='movie'>
+    <img src="<%= @poster %>" />
+  </div>
+  <div id="movie-data" class='movie'>
+    <div class='title'><%= @title %></div>
+    <div><span>Director: </span><span><%= @director %></span></div>
+    <div>Rated: <%= @rated %></div>
+    <div>Released: <%= @released %></div>
+    <div><p><%= @plot %></p></div>
+  </div>
+</div>
+<% end %>

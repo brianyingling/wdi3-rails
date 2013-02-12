@@ -1,0 +1,17 @@
+<hgroup>
+    <h1>Welcome to Stock Quote!</h1>
+    <h3>Enter a Stock Symbol:</h3>
+    <form method="get" action='/stock'>
+      <input type="text" id='symbol' name='symbol' />
+      <button>Quote!</button>
+    </form>
+</hgroup>
+
+
+<% if @symbol %>
+<div>
+  <div class='result'>
+    <div class="quote"><%= @name %> is currently trading at <%= number_to_currency(@quote) %></div></div>
+</div>
+<% end %>
+

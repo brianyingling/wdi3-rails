@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>R20130211Basics</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <!-- prevents cross-browser scripting -->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href='/home'>Homepage</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/faq">FAQ</a></li>
+  </ul>
+</nav>
+<!-- Just like Sinatra, adds HTML pages -->
+<%= yield %>
+
+</body>
+</html>
