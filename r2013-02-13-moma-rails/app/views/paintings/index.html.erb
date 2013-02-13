@@ -1,0 +1,14 @@
+<table border='0'>
+  <tr class='table_col_labels'>
+    <td>Title</td><td>Year</td><td>Medium</td><td>Style</td><td>Image</td>
+  </tr>
+  <% @paintings.each do |painting| %>
+    <tr style='background-color:<%= cycle('#ccc','#ddd') %>'>
+      <td><%= link_to painting.title, painting %></td>
+      <td><%= painting.year %></td>
+      <td><%= painting.medium %></td>
+      <td><%= painting.style %></td>
+      <td><%= image_tag(painting.image) %></td>
+    </tr>
+    <% end %>
+</table>

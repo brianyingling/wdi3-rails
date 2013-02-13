@@ -1,0 +1,14 @@
+<table cellspacing='0' border='0'>
+  <tr class="table_col_labels">
+    <td>Name</td><td>Nationality</td><td>Time Period</td><td>Image</td>
+  </tr>
+  <% @artists.each do |artist| %>
+    <tr style='background-color:<%= cycle('#ccc','white') %>'>
+      <td><%= link_to(artist.name, artist_path(artist.id)) %><br/>
+      (<%= artist.dob %>)</td>
+      <td><%= artist.nationality %></td>
+      <td><%= artist.period %></td>
+      <td><%= image_tag(artist.image) %></td>
+    </tr>
+    <% end %>
+</table>

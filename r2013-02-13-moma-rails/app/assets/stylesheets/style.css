@@ -1,0 +1,105 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Times New Roman', 'IM Fell French Canon';
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: normal;
+  border-bottom: 1px solid black;
+}
+
+h1 a {
+  text-decoration: none;
+}
+h1 a:visited {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+.artist_show {
+  display: inline-block;
+  vertical-align: top;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+}
+
+table {
+  width: 100%;
+
+}
+
+tr:hover {
+  background-color:yellow;
+}
+
+
+.table_col_labels {
+  background-color: lightblue;
+}
+
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+img {
+  width: 200px;
+}
+
+#artist_biopage_name {
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+#artist_info {
+  width: 300px;
+}
+
+.new_form {
+  width: 200px;
+  border: 1px solid lightblue;
+  margin-top:30px;
+}
+
+#artist_dob {
+  font-style: italic;
+}
+
+.artist_biopage_pic {
+  width: 350px;
+  margin: 10px;
+
+}
+
+.btn {
+  background-color: lightblue;
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.25s ease-out;
+  font-family: garamond;
+}
+
+a.btn:hover {
+  background-color:yellow;
+}
+
+.editing {
+  margin: 10px;
+  text-align: right;
+}
+
+
+

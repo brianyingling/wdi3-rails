@@ -1,0 +1,21 @@
+<div class="new_form">
+
+<%= form_for @artist do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label 'Date of Birth' %>
+  <%= f.text_field :dob %>
+
+  <%= f.label :nationality %>
+  <%= f.text_field :nationality %>
+
+  <%= f.label "Time Period" %>
+  <%= f.text_field :period %>
+
+  <%= f.label "Image File" %>
+  <%= f.text_field :image %>
+
+  <%= f.submit %>
+</div>
+<% end %>

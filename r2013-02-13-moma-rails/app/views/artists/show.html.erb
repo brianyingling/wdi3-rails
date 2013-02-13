@@ -1,0 +1,14 @@
+<div class='artist_show' id="artist_image">
+  <%= image_tag @artist.image, :class=>'artist_biopage_pic' %>
+</div>
+<div class='artist_show' id='artist_info'>
+  <div id='artist_biopage_name'><%= @artist.name %></div>
+  <div id='artist_dob'><%= @artist.dob %></div>
+  <div id='artist_nationality'><%= @artist.nationality %>
+  <div class="editing">
+    <%= link_to 'Edit', edit_artist_path(@artist.id), :method=>:get, :class=>'btn' %>
+    <%= link_to 'Delete', @artist, :method=>:delete, :class=>'btn', :confirm=>'Are you sure you want to delete?' %>
+  </div>
+</div>
+
+
