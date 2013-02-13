@@ -1,0 +1,10 @@
+There are <%= pluralize(@person_count1, 'deer') %> signed up.
+There are <%= pluralize(@person_count2, 'deer') %> signed up.
+
+<%= truncate(@story,:length=>20) %>
+<ul>
+<% @numbers.each do |num| %>
+  <!-- Applies red to this li element -->
+  <li style='background-color:<%= cycle('tan',"#fff") %>;'><%= num %></li>
+<% end %>
+</ul>

@@ -1,0 +1,14 @@
+I love planets!
+<body style="margin:0 auto;">
+
+<ul style="list-style:none;margin:10px;">
+
+<% @planets.each do |planet| %>
+ <li style="font-size: 24px;border-bottom:1px solid black;">
+  <form method='post' action="<%=planet_delete_path(planet.id) %>"
+  <%= link_to(planet.name, planet_path(planet.id) ) %></li>
+ <p style="margin-top:0;"><%= pluralize(planet.moons, "moon") %>, <%= planet.orbit %> orbit,
+  <%= button_to('Delete', planet_delete_path(planet.id)) %> <%= link_to('Edit', planet_edit_path(planet.id)) %>
+<% end %>
+</ul>
+</body>

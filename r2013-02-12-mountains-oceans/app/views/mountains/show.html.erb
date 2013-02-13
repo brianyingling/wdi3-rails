@@ -1,0 +1,14 @@
+<table cellpadding='0'>
+  <tr>
+    <td>Name</td><td>Height</td><td>Range</td>
+<% @mountains.each do |mountain| %>
+  <tr style="background-color:<%= cycle('#ccc','white')%>;">
+    <td><%= link_to(mountain.name, mountain_path(mountain.id)) %></td>
+    <td><%= mountain.height %></td>
+    <td><%= mountain.range %></td>
+    <td><%= button_to('Delete',mountain_delete_path(mountain.id)) %></td>
+    <td><%= link_to('Edit',mountain_edit_path(mountain.id))%></td>
+  </tr>
+<% end %>
+</tr>
+</table>

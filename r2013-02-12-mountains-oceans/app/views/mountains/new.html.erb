@@ -1,0 +1,17 @@
+<form method='post' action="<%= mountains_create_path %>" style='width:200px;margin-left:100px;'>
+  <fieldset>
+  <label for="name">Name</label>
+  <input type="text" id="name" name="mountain[name]" value='<%= @mountain.name if @mountain %>'/>
+  <label for="height">Height</label>
+  <input type='text' id='height' name='mountain[height]' />
+  <label for="image">Image</label>
+  <input type='text' id='image' name='mountain[image]' />
+  <label for="tech-diff">Technical Difficulty Level</label>
+  <input type='text' id='diff_tech' name='mountain[diff_tech]' />
+  <label for='country'>Country</label>
+  <input type='country' id='country' name='mountain[country]' />
+  <label for='range'>Mountain Ranges</label>
+  <input type='text' id='range' name='mountain[range]' />
+  <%= button_to('Save', mountains_create_path) %>
+</fieldset>
+</form>
