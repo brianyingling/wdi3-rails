@@ -14,6 +14,6 @@
 #
 
 class Painting < ActiveRecord::Base
-  attr_accessible :title, :year, :medium, :style, :image
+  attr_accessible :title, :year, :medium, :style, :image, :artist_id
   belongs_to :artist    #can call a painting object, call p1.artist = an artist object
 end

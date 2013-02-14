@@ -7,4 +7,6 @@ R20130213MomaRails::Application.routes.draw do
   #
   # see rake routes
   resources :artists, :paintings
+  get '/'=>'paintings#index'
+
 end

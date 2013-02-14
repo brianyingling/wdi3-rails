@@ -7,7 +7,7 @@
   <div id='artist_nationality'><%= @painting.medium %></div>
   <div id='artist_period'><%= @painting.style %></div>
   <div class="editing">
-    <%= link_to 'Edit', @painting, :class=>'btn' %>
+    <%= link_to 'Edit', edit_painting_path(@painting.id), :class=>'btn' %>
     <%= link_to 'Delete', @painting, :method=>:delete, :class=>'btn', :confirm=>'Are you sure you want to delete?' %>
   </div>
 </div>

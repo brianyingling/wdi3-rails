@@ -1,0 +1,18 @@
+<h2>Show</h2>
+
+<div class="book_page" id="book_cover">
+    <%= image_tag(@book.coverimage) %>
+</div>
+<div class="book_page" id="book_info">
+  <div><%= @book.title %></div>
+  <div><%= @book.subtitle %></div>
+  <div><%= @book.isbn %></div>
+  <div><%= @book.publisher %></div>
+  <div><%= @book.pubdate %></div>
+  <div><%= @book.format %></div>
+  <div><%= @book.num_pages %></div>
+  <div class="book_buttons">
+    <%= button_to "Edit", edit_book_path(@book.id), :method=>'get' %>
+    <%= button_to "Delete", @book, :method=>'delete', :confirm=>'Are you sure you want to delete?' %>
+  </div>
+</div>

@@ -14,6 +14,6 @@ Painting.create(:title=>'The Scream',:year=>'1893',:medium=>'Oil on Cardboard',:
 Painting.create(:title=>'Self-Portrait',:year=>'1500',:medium=>'Oil on Canvas',:style=>'Northern Renaissance', :image=>'durer_selfportrait.jpg')
 
 #name, nationality, dob, pariod, image
-Artist.create(:name=>'Leonardo Da Vinci', :nationality=>'Italy', :dob=>'04/15/1452', :period=>'High Renaissance',:image=>'leonardodavinci.jpg')
+Artist.create(:name=>'Leonardo Da Vinci', :nationality=>'Italy', :dob=>'1452-04-15', :period=>'High Renaissance',:image=>'leonardodavinci.jpg')
 Artist.create(:name=>'Edward Munch', :nationality=>'Norway', :dob=>'12/12/1863', :period=>'Expressionism',:image=>'leonardodavinci.jpg')
 Artist.create(:name=>'Albrecht Durer', :nationality=>'Holy Roman Empire', :dob=>'05/21/1471', :period=>'Northern Renaissance',:image=>'durer_selfportrait.jpg')

@@ -1,5 +1,9 @@
 <div class="new_form">
   <%= form_for @painting do |f| %>
+    <%= f.label :artist_id %><br/>
+    <%= f.select :artist_id, Artist.all.map {|artist| [artist.name, artist.id]},{:include_blank=>true} %>
+    <%= link_to "Add", new_artist_path, :class=>'btn' %>
+    <hr style='border:1px dotted lightblue;margin:15px 0;'/>
     <%= f.label :title %>
     <%= f.text_field :title %>
 

@@ -13,7 +13,6 @@ class ArtistsController < ApplicationController
   # creates the edit form, fills the form with parameters
   def edit
     @artist = Artist.find(params[:id])
-    render 'new'
   end
 
   # updates the db from the edit form

@@ -1,0 +1,38 @@
+nav {
+  text-align: left;
+}
+
+nav ul li {
+  display: inline;
+  list-style: none;
+
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.book_page {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.book_buttons {
+  display: inline;
+}
+
+.author_page {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.form {
+  width: 300px;
+}
+
+.field {
+  width: 75px;
+  display: inline-block;
+}
+

@@ -1,0 +1,19 @@
+<h2>Edit</h2>
+
+<div class='form'>
+<%= form_for @author do |f| %>
+  <div class='field'><%= f.label "First Name" %></div>
+  <%= f.text_field :firstname %>
+
+  <div class='field'><%= f.label "Last Name" %></div>
+  <%= f.text_field :lastname %>
+
+  <div class='field'><%= f.label "Image URL" %></div>
+  <%= f.text_field :image %>
+
+  <div class='field'><%= f.label :genre %></div>
+  <%= f.text_field :genre %>
+
+  <%= f.submit %>
+<% end %>
+</div>

@@ -1,0 +1,28 @@
+<h2>New Book</h2>
+<div class='form'>
+  <%= form_for @book do |f| %>
+    <div class='field'><%= f.label :title %></div>
+    <%= f.text_field :title %>
+
+    <div class='field'><%= f.label :subtitle %></div>
+    <%= f.text_field :subtitle %>
+
+    <div class='field'><%= f.label :publisher %></div>
+    <%= f.text_field :publisher %>
+
+    <div class='field'><%= f.label :pubdate %></div>
+    <%= f.text_field :pubdate %>
+
+    <div class='field'><%= f.label "Image URL" %></div>
+    <%= f.text_field :coverimage %>
+
+    <div class='field'><%= f.label :format %></div>
+    <%= f.text_field :format %>
+
+    <div class='field'><%= f.label "Number of Pages" %></div>
+    <%= f.text_field :num_pages %>
+
+    <%= f.submit %>
+
+  <% end %>
+</div>

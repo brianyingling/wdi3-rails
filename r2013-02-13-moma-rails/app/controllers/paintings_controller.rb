@@ -11,9 +11,14 @@ class PaintingsController < ApplicationController
   end
 
   def edit
+    @painting = Painting.find(params[:id])
+    render 'new'
   end
-  def update
 
+  def update
+    painting = Painting.find(params[:id])
+    painting.update_attributes(params[:painting])
+    redirect_to(painting)
   end
   def show
     @painting = Painting.find(params[:id])

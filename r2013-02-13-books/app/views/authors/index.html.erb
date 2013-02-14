@@ -1,0 +1,11 @@
+<h2>Authors</h2>
+<% @authors.each do |author| %>
+
+  <div class='author_page' id="author_image"><%= image_tag(author.image) %></div>
+  <div class='author_page' id='book_info'>
+    <div><%= author.firstname %> <%= link_to(author.lastname, author) %></div>
+    <div><%= author.genre %></div>
+
+  </div>
+
+<% end %>
