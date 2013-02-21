@@ -7,6 +7,18 @@
   <%= @author.firstname %>
   <%= @author.lastname %>
   <%= @author.genre %>
+
+  <ul>
+  <% @author.books.each do |book| %>
+    <li><%= book.title %></li>
+  <% end %>
+  </ul>
+
+  <% @author.books.each do |book| %>
+      <%= image_tag(book.coverimage) %>
+
+  <% end %>
+
   <%= button_to "Edit", edit_author_path(@author.id), :method=>'get' %>
   <%= button_to "Delete", @author, :method=>'delete', :confirm=>'Are you sure you want to delete?' %>
 </div>

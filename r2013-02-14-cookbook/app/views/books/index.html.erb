@@ -1,0 +1,26 @@
+<nav>
+  <ul>
+    <li><%= link_to "New Book", new_book_path %></li>
+  </ul>
+</nav>
+
+
+<ol>
+<% @books.each do |book| %>
+<li class='listing'>
+  <ul>
+    <li><%= image_tag(book.image) %></li>
+    <li>
+      <div><%= link_to book.title, book %></div>
+      <div><%= book.cuisine %></div>
+      <div><%= book.chef %></div>
+      <div class='editable'>
+        <%= button_to "Edit", edit_book_path(book.id), :method=>'get' %>
+        <%= button_to "Delete", book, :method=>'delete', :confirm=>"Are you sure?" %>
+      </div>
+    </li>
+
+  </ul>
+</li>
+<% end %>
+</ol>

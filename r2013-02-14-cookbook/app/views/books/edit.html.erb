@@ -1,0 +1,22 @@
+<h2>Edit Book</h2>
+<div class='form'>
+<%= form_for @book do |f| %>
+  <%= f.label       :title %>
+  <%= f.text_field  :title %>
+
+  <%= f.label       :chef %>
+  <%= f.text_field  :chef %>
+
+  <%= f.label       :cuisine %>
+  <%= f.text_field  :cuisine %>
+
+  <%= f.label       :image %>
+  <%= f.text_field  :image %>
+
+  <% Recipe.order(:name).each do |recipe| %>
+    <span><%= recipe.name %></span>
+    <%= check_box_tag 'book[recipe_ids][]', recipe.id, recipe.in?(@book.recipes.to_a)  %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+</div>

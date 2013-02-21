@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li><%= link_to "New Ingredient", new_ingredient_path %></li>
+  </ul>
+</nav>
+
+<% @ingredients.each do |ingredient| %>
+  <div style='display:inline-block;vertical-align:top;margin-bottom:30px;'>
+    <div><%= image_tag ingredient.image %></div>
+  </div>
+  <div style='display:inline-block;vertical-align:top;'>
+    <div><%= ingredient.name %></div>
+    <div><%= ingredient.measurement %></div>
+    <div><%= ingredient.cost %></div>
+  </div>
+  <% end %>

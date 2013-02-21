@@ -1,0 +1,16 @@
+<h2>Show Recipe</h2>
+<div>
+  <div style='display:inline-block;'><%= image_tag @recipe.image %></div>
+  <div style='display:inline-block;vertical-align:top;'>
+    <div><%= @recipe.name %></div>
+    <div><%= @recipe.course %></div>
+    <div><%= @recipe.cooktime %></div>
+    <div><%= @recipe.instructions %></div>
+    <div><%= @recipe.servingssize %></div>
+    <div class='editable'>
+      <%= button_to "Edit", edit_recipe_path(@recipe.id), :method=>'get' %>
+      <%= button_to "Delete", @recipe, :method=>'delete', :confirm=>'Are you sure?' %>
+    </div>
+
+  </div>
+</div>

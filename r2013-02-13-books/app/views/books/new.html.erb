@@ -1,6 +1,10 @@
 <h2>New Book</h2>
 <div class='form'>
   <%= form_for @book do |f| %>
+    <% Author.all.each do |author| %>
+        <div><%= author.firstname %> <%= author.lastname %></div>
+    <% end %>
+    <div><%= f.select :author_id, Author.all.map {|author| [author.firstname+ ' ' +author.lastname, author.id]},:include_blank => true %></div>
     <div class='field'><%= f.label :title %></div>
     <%= f.text_field :title %>
 

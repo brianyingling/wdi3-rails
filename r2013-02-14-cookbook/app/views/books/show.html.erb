@@ -1,0 +1,29 @@
+<div class='book'>
+  <div class='book-data'>
+    <div class='book-info'><%= image_tag(@book.image) %></div>
+    <div class='book-info'>
+      <%= link_to @book.title, @book %>
+      <%= @book.cuisine %></li>
+      <%= @book.chef %></li>
+    </div>
+  </div>
+<br/>
+
+<% @book.recipes.each do |recipe| %>
+    <div class="recipe-name"><%= recipe.name %></div>
+    <div class='recipe'>
+
+    <div class="recipe-info"><%= image_tag recipe.image %></div>
+
+
+  <br/>
+  <% recipe.ingredients.each do |ingredient| %>
+  <div class='ingredient'>
+    <div class="ingredient-name"><%= ingredient.name %></div>
+    <div class="ingredient-info"><%= image_tag ingredient.image %>
+    </div>
+  </div>
+  <% end %>
+   </div>
+
+<% end %>
