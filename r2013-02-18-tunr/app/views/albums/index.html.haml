@@ -2,13 +2,14 @@
   .eight.columns
     %table
       %tr
-        %td= link_to "New Album", new_album_path, :class=>'button' if @auth.present? && @auth.is_admin
+        %td= link_to "New Album", new_album_path, :class=>'button radius tiny' if @auth.present? && @auth.is_admin
       %tr
         %td Name
-        %td Options
+        - if @auth.present? && @auth.is_admin
+          %td Options
       - @albums.each do |album|
         %tr
           %td= album.name
           %td= image_tag(album.image, :class=>'album_covers')
-          %td= link_to("Edit", edit_album_path(album.id), :class=>'button') if @auth.present? && @auth.is_admin
+          %td= link_to("Edit", edit_album_path(album.id), :class=>'button radius tiny') if @auth.present? && @auth.is_admin
   .four.columns
