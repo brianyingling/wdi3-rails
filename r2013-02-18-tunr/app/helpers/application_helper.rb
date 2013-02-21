@@ -1,9 +1,9 @@
 module ApplicationHelper
+  def is_admin
+    @auth.present? && @auth.is_admin
+  end
   def intellinav
-    links = ""
-    links += "<li>#{link_to('Genres',genres_path)}</li>"
-    links += "<li>#{link_to('Albums',albums_path)}</li>"
-    links += "<li>#{link_to('Artists',artists_path)}</li>"
+    links = ''
     if @auth.present?
       if @auth.is_admin
         links += "<li>#{link_to('Users', users_path)}</li>"
@@ -15,6 +15,6 @@ module ApplicationHelper
       links += "<li>#{link_to('Create Account', new_user_path)}</li>"
       links += "<li>#{link_to('Login',login_path)}</li>"
     end
-
+  links += "</ul></li>"
   end
 end

@@ -1,0 +1,13 @@
+.four.columns
+  %h2= @song.name
+  %h3= @song.artist.name if @song.artist
+  = link_to "Edit", edit_song_path(@song.id), :class=>'button radius tiny'
+.eight.columns
+  = image_tag @song.image
+  %h4 Genres
+  = audio_tag(@song.filename, :controls=>true)
+  %ul
+  - @song.genres.each do |genre|
+    %li= link_to genre.name, genre
+
+

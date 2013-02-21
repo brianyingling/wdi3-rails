@@ -1,4 +1,5 @@
 class GenresController < ApplicationController
+  before_filter :check_if_admin, :only => [:edit,:destroy]
   def index
     @genres = Genre.order(:name)
   end
@@ -8,12 +9,20 @@ class GenresController < ApplicationController
   end
 
   def new
-    @genre = Genre.new
+    @genre = Genre.new()
+  end
+
+  def show
+    @genre = Genre.find(params[:id])
   end
 
   def create
-    genre = Genre.create(params[:genre])
-    redirect_to genres_path
+    @genre = Genre.new(params[:genre])
+    if @genre.save
+      redirect_to genres_path
+    else
+      render :new
+    end
   end
 
   def update

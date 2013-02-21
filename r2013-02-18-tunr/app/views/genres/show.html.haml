@@ -1,0 +1,5 @@
+.twelve.columns
+  %h3= @genre.name
+  %ul
+  - @genre.songs.each do |song|
+    %li= link_to song.name, song

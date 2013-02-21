@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width" />
 
   <title>Tunr</title>
+  <link href='http://fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -21,10 +22,14 @@
   -->
 
   <!-- Included CSS Files (Compressed) -->
+
+  <!--
+
   <link rel="stylesheet" href="stylesheets/foundation.min.css">
   <link rel="stylesheet" href="stylesheets/app.css">
 
   <script src="javascripts/modernizr.foundation.js"></script>
+-->
 </head>
 <body>
 
@@ -47,24 +52,7 @@
 
   <!-- Footer -->
 
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="six columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="six columns">
-          <ul class="link-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <%= render :partial=>'layouts/footer' %>
 
   <!-- Included JS Files (Uncompressed) -->
   <!--

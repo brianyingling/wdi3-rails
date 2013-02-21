@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
     # Instance variables are available inside all of your views
     @auth = User.find(session[:user_id]) if session[:user_id].present?
   end
+  def check_if_logged_in
+    redirect_to root_path if @auth.nil?
+  end
+  def check_if_admin
+    redirect_to root_path if @auth.nil? || !@auth.is_admin
+  end
 end

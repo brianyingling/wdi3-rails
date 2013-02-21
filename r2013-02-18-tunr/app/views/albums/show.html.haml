@@ -1,0 +1,9 @@
+.four.columns
+  = image_tag @album.image
+.eight.columns
+  %h2= @album.name
+  = link_to "Edit", edit_album_path(@album.id), :class=>'button radius tiny'
+  %h3= @album.artists.present? ? link_to(@album.artists.first.name, artist_path(@album.artists.first.id)) : "No artist."
+  %ul
+    - @album.songs.each do |song|
+      %li= link_to song.name, song

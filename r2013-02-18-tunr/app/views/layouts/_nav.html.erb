@@ -1,14 +1,25 @@
 <!-- Header and Nav -->
 
 <div class="row">
-<div class="two columns">
+<div class="three columns">
   <h1>Tunr</h1>
+  <h4>Music The Way You Want It</h4>
 </div>
-<div class="ten columns">
+<div class="nine columns">
   <ul class="nav-bar right">
     <li><%= link_to "Home", root_path %></li>
-    <%== intellinav %>
+    <li class='has-flyout'>
+      <a href="">Browse Music</a>
+       <a class='flyout-toggle'><span> </span></a>
+       <ul class='flyout' style='display: none;'>
+          <li><%= link_to('Genres',genres_path) %></li>
+          <li><%= link_to('Albums',albums_path) %></li>
+          <li><%= link_to('Artists',artists_path) %></li>
+          <li><%= link_to('Songs',songs_path) %></li>
+        </ul>
+          <%== intellinav %>
     </ul>
+
 </div>
 </div>
 

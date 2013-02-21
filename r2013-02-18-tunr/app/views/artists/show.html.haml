@@ -1,0 +1,11 @@
+.twelve.columns
+  %h2= @artist.name
+  %h3 Albums:
+  %ul
+  - @artist.albums.each do |album|
+    %li= link_to album.name, album
+  %h3 Songs:
+  %ul
+  - @artist.songs.each do |song|
+    %li= link_to song.name, song
+

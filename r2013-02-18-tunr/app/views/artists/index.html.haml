@@ -1,4 +1,5 @@
-.twelve.columns
+.three.columns
+.seven.columns
   %table
     %tr
       %td= link_to "New Artist", new_artist_path, :class=>'button radius tiny' if @auth.present? && @auth.is_admin
@@ -9,8 +10,8 @@
         %td Options
     - @artists.each do |artist|
       %tr
-        %td= artist.name
+        %td= link_to artist.name, artist
         %td= image_tag(artist.image, :class=>'portraits')
         %td= link_to "Edit", edit_artist_path(artist.id), :class=>'button radius tiny' if @auth.present? && @auth.is_admin
-
+.two.columns
 

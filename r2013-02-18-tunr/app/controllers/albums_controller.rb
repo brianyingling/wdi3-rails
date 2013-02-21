@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_filter :check_if_admin, :only => [:edit,:destroy]
   def index
     @albums = Album.order(:name)
   end
@@ -7,8 +8,17 @@ class AlbumsController < ApplicationController
     @album = Album.new
   end
   def create
-    Album.create(params[:album])
-    redirect_to albums_path
+    @album = Album.new(params[:album])
+    if @album.save
+      redirect_to albums_path
+    else
+      render :new
+    end
+  end
+
+  def show
+    @album = Album.find(params[:id])
+
   end
 
 

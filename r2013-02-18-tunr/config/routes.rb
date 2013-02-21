@@ -8,7 +8,7 @@ R20130218Tunr::Application.routes.draw do
     end
   end
 
-  resources :genres, :albums, :artists
+  resources :genres, :albums, :artists, :songs
 
 
   get '/login'    => 'session#new'

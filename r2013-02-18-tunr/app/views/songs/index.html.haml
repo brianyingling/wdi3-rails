@@ -1,0 +1,14 @@
+.three.columns
+.seven.columns
+  %table
+    %tr
+      %td= link_to "New Song", new_song_path, :class=>'button radius tiny' if is_admin
+    %tr
+      %td Name
+
+    - @songs.each do |song|
+      %tr
+        %td= link_to song.name, song_path(song.id)
+        %td= audio_tag(song.filename, :controls=>true)
+        %td= link_to "Edit", edit_song_path(song.id), :class=>'button radius tiny' if is_admin
+

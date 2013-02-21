@@ -12,6 +12,7 @@
  *=
  *= require 'foundation/stylesheets/foundation.min.css'
  *= require 'foundation/stylesheets/app.css'
+ *= require 'home'
  *= require 'users'
  *= require 'albums'
  *= require 'artists'
