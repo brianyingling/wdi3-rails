@@ -1,0 +1,18 @@
+.two.columns
+.ten.columns
+  %h3 Confirm Purchase
+  = @song.name
+  %h5= number_to_currency(@song.price)
+  %h4 Add to Mixtapes
+  %ul
+  = form_tag buy_song_path(@song)
+  - @auth.mixtapes.each do |mixtape|
+    = check_box_tag('song[mixtape_ids][]',mixtape.id,@mixtape.in?(@song.mixtapes.to_a))
+    %span= mixtape.name
+    %br
+  = button_to "Purchase", :class=>'button'
+
+
+
+
+

@@ -1,10 +1,15 @@
 .eight.columns
   = render(:partial=> 'shared/errors', :locals=>{:object=>@song})
+  %h2 Add a Song
   = form_for @song do |f|
-    = f.text_field    :name
     = f.label         :name
-    = f.text_field    :filename
+    = f.text_field    :name
     = f.label         "File Name"
+    = f.text_field    :filename
+    = f.label         :price
+    = f.text_field    :price
+    = f.label         :image
+    = f.text_field    :image
     = f.submit nil, :class=>'button_radius'
     - Genre.order(:name).each do |genre|
       = check_box_tag('song[genre_ids][]',genre.id,genre.in?(@song.genres.to_a))

@@ -57,6 +57,53 @@ body {
   }
 }
 
+#slide04 {
+  background: url('/assets/aerosmith.jpeg');
+  background-size: cover;
+  width: 1000px;
+  height: 400px;
+  position: relative;
+  .title {
+    position: absolute;
+    color: #fff;
+    font-size: 63px;
+    font-weight: bold;
+    top: 10px;
+  }
+}
+
+#slide05 {
+  background: url('/assets/taylor-swift.jpg');
+  background-size: cover;
+  width: 1000px;
+  height: 400px;
+  position: relative;
+  .title {
+    position: absolute;
+    color: #fff;
+    font-size: 63px;
+    font-weight: bold;
+    top: 10px;
+  }
+}
+
+
+#slide06 {
+  background: url('/assets/davematthewsband.jpg');
+  background-size: cover;
+  width: 1000px;
+  height: 400px;
+  position: relative;
+  .title {
+    position: absolute;
+    color: #fff;
+    font-size: 63px;
+    font-weight: bold;
+    top: 10px;
+  }
+}
+
+
 form {
   margin: 0 15px;
 }

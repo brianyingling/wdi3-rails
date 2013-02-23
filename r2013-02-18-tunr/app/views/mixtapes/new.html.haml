@@ -1,0 +1,6 @@
+.eight.columns
+  = render(:partial=>'shared/errors',:locals=>{:object=>@mixtape})
+  %h2 Add Mixtape
+  =form_for @mixtape do |f|
+    = f.text_field :name
+    = f.submit

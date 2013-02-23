@@ -18,9 +18,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-
   end
-
 
   def edit
     @album = Album.find(params[:id])
@@ -30,6 +28,12 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     @album.update_attributes(params[:album])
+    @album.save
+    redirect_to @album
+  end
+
+  def destroy
+    Album.delete(params[:id])
     redirect_to albums_path
   end
 end

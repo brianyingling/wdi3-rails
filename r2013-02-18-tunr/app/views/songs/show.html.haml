@@ -1,13 +1,33 @@
-.four.columns
-  %h2= @song.name
-  %h3= @song.artist.name if @song.artist
-  = link_to "Edit", edit_song_path(@song.id), :class=>'button radius tiny'
-.eight.columns
-  = image_tag @song.image
+.five.columns
+  %h3= @song.name
+  %h4= @song.album.artists.first.name if @song.album
+  %h5= number_to_currency(@song.price)
+  = link_to "Edit", edit_song_path(@song.id), :class=>'button radius tiny' if @auth.present? && @auth.is_admin
+  = link_to "Delete", @song, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure you want to delete?' if is_admin
+
+  -if @auth.present? && !@auth.is_admin
+    - if !@auth.nil? && !@auth.has_song?(@song)
+      %h5 Your Mixtapes
+      %ul
+      - @auth.mixtapes.each do |mixtape|
+        %span= check_box_tag('mixtape[songs_ids][]',@song.id,@song.in?(@auth.mixtapes.to_a))
+        %span= mixtape.name
+        %br
+      - if @auth.balance >= @song.price
+        =  link_to("Buy for "+number_to_currency(@song.price), purchase_song_path, :class=>'button radius')
+      - else
+        .error You need more money in your account to purchase this song.
+    -else
+      = link_to "You Own This Song", @song, :class=>'button radius success'
+
+.five.columns
+  = image_tag(@song.image, :class=>'song_image  ')
   %h4 Genres
-  = audio_tag(@song.filename, :controls=>true)
   %ul
-  - @song.genres.each do |genre|
-    %li= link_to genre.name, genre
+    - @song.genres.each do |genre|
+      %li= link_to genre.name, genre
+  = audio_tag(@song.filename, :controls=> @auth.nil? || @auth.has_song?(@song))
+
+
 
 

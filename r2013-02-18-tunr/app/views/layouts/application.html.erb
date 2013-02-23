@@ -46,7 +46,12 @@
    <% end %>
 
    <div class='row'>
-    <%= yield %>
+    <div class='two columns'>
+      <%= render :partial => 'layouts/sidebar' %>
+    </div>
+    <div class='ten columns'>
+      <%= yield %>
+    </div>
   </div>
 
 

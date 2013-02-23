@@ -1,0 +1,5 @@
+- if @auth.present? && !@auth.is_admin
+  %h5= link_to "My Mixtapes", mixtapes_path
+  %ul
+  - @auth.mixtapes.each do |mixtape|
+    %li= link_to mixtape.name, mixtape

@@ -17,4 +17,12 @@ module ApplicationHelper
     end
   links += "</ul></li>"
   end
+
+  def mixtape_nav
+    links = ''
+    @auth.mixtapes.each { |mixtape| links += "<li>#{link_to(mixtape.name, mixtape)}</li>" }
+    links += "<li>#{link_to('Create New',new_mixtape_path)}</li>"
+  end
+
+
 end

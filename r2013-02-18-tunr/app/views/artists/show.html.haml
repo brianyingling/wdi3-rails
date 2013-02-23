@@ -1,11 +1,12 @@
-.twelve.columns
+.five.columns
   %h2= @artist.name
   %h3 Albums:
-  %ul
   - @artist.albums.each do |album|
-    %li= link_to album.name, album
-  %h3 Songs:
-  %ul
-  - @artist.songs.each do |song|
-    %li= link_to song.name, song
-
+    %h4= link_to album.name, album
+    %ul
+      - album.songs.each do |song|
+        %li= link_to song.name, song
+  = link_to "Edit", edit_artist_path(@artist), :class=>'button radius tiny' if is_admin
+  = link_to "Delete", @artist, :method=>'delete', :class=>'button radius tiny',:confirm=>'Are you sure?'
+.five.columns
+  = image_tag @artist.image

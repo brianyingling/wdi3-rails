@@ -8,6 +8,13 @@
 <div class="nine columns">
   <ul class="nav-bar right">
     <li><%= link_to "Home", root_path %></li>
+     <% if @auth.present? && !@auth.is_admin? %>
+       <li class='has-flyout'>
+        <a href="">Mixtapes</a>
+        <ul class='flyout' style='display: none;'>
+         <%== mixtape_nav %>
+         </ul></li>
+      <% end %>
     <li class='has-flyout'>
       <a href="">Browse Music</a>
        <a class='flyout-toggle'><span> </span></a>

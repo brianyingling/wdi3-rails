@@ -16,9 +16,9 @@ g1 = Genre.create(:name=>'Classical')
 g2 = Genre.create(:name=>'Rock')
 g3 = Genre.create(:name=>'Top 40')
 
-s1 = Song.create(:name=>'Thriller')
-s2 = Song.create(:name=>'Billie Jean')
-s3 = Song.create(:name=>'Smells Like Teen Spirit')
+s1 = Song.create(:name=>'Thriller', :price=>0.99)
+s2 = Song.create(:name=>'Billie Jean',:price=>0.99)
+s3 = Song.create(:name=>'Smells Like Teen Spirit',:price=>0.99)
 
 a1 = Album.create(:name=>'Thriller')
 a2 = Album.create(:name=>'Nevermind')
@@ -35,6 +35,7 @@ r3 = Artist.create(:name=>'Beatles')
 u1 = User.create(:name=>'BigBird',:image=>'http://i1238.photobucket.com/albums/ff482/99mainstreet/BigBird2.jpg',:password=>'bigbird',:password_confirmation=>'bigbird',:is_admin=>true,:balance=>10.00)
 u2 = User.create(:name=>'HoneyBooBoo',:image=>'http://static5.businessinsider.com/image/506b4e076bb3f7752900001a-400-/honey-boo-boo.png',:password=>'honeybooboo',:password_confirmation=>'honeybooboo',:balance=>1050.80)
 u3 = User.create(:name=>'Jilly',:image=>'jill.jpg',:password=>'jill',:password_confirmation=>'jill',:balance=>'10_000.00')
+u4 = User.create(:name=>'admin',:image=>'',:password=>'admin',:password_confirmation=>'admin',:balance=>'10_000.00')
 
 
 m1 = Mixtape.create(:name=>'Easy Listening')

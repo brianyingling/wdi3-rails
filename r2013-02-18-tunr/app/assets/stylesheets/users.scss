@@ -13,8 +13,8 @@
 
 .table_div {
   position: relative;
-  height: 1000px;
-  overflow: hidden;
+  min-height: 1500px;
+
 }
 
 
@@ -27,6 +27,15 @@
   right: 0px;
 }
 
-.row {
+.error {
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
 
+.song_image {
+  width: 300px;
 }

@@ -1,0 +1,9 @@
+.twelve.columns
+  %h2= @mixtape.name
+  %h3 Songs
+  %table
+    - @mixtape.songs.each do |song|
+      %tr
+        %td= link_to song.name, song
+        %td= audio_tag = audio_tag(song.filename, :controls=>true)
+        %td= link_to "Refund", song, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure?'

@@ -1,9 +1,8 @@
-.row
-  .five.columns
-    = form_tag '/login' do
-      = label_tag 'Username'
-      = text_field_tag 'username', nil, :autofocus => true, :style=>'text-align:left;'
-      = label_tag 'Password'
-      = password_field_tag 'password'
-      = submit_tag 'Login to Tunr', :class=>'button radius'
-  .seven.columns
+.five.columns
+  = form_tag '/login' do
+    = label_tag 'Username'
+    = text_field_tag 'username', nil, :autofocus => true, :style=>'text-align:left;'
+    = label_tag 'Password'
+    = password_field_tag 'password'
+    = submit_tag 'Login to Tunr', :class=>'button radius'
+.seven.columns

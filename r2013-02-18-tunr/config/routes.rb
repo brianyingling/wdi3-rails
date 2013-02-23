@@ -8,7 +8,14 @@ R20130218Tunr::Application.routes.draw do
     end
   end
 
-  resources :genres, :albums, :artists, :songs
+  resources :songs do
+    member do
+      get 'purchase'
+      post 'buy'
+    end
+  end
+
+  resources :genres, :albums, :artists, :songs, :mixtapes
 
 
   get '/login'    => 'session#new'

@@ -6,7 +6,7 @@
     = f.label :name
     = f.text_field :image
     = f.label :image
-    = f.text_field :balance
+    = f.text_field :balance, :value => number_to_currency(f.object.balance, :precision => 2)
     = f.label :balance
     = f.password_field :password
     = f.label :password

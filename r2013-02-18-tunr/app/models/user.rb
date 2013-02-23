@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  is_admin        :boolean          default(FALSE)
+#  balance         :decimal(, )      default(0.0)
 #
 
 class User < ActiveRecord::Base
@@ -19,4 +20,13 @@ class User < ActiveRecord::Base
   validates :image, :presence => true
   validates :name, :uniqueness => true, :length => {:minimum => 2}
   validates :balance, :numericality => {:greater_than_or_equal_to => 0}
+
+  def has_song?(song)
+    songs = self.mixtapes.map &:songs
+    songs = songs.flatten
+    songs = songs.uniq
+    song.in?(songs)
+  end
+
+
 end
