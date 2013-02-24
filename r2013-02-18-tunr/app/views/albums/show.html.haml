@@ -1,16 +1,19 @@
-.four.columns
-  = image_tag @album.image
-.eight.columns
+.one.columns
+.six.columns
   %h2= @album.name
   %h3= @album.artists.present? ? link_to(@album.artists.first.name, artist_path(@album.artists.first.id)) : "No artist."
-  %ul
+  %table
     - @album.songs.each do |song|
-      %li= link_to song.name, song
+      %tr
+        %td= link_to song.name, song
+        %td= audio_tag song.filename, :controls => @auth.albums.include?(@album)
   = link_to "Edit", edit_album_path(@album.id), :class=>'button radius tiny' if is_admin
   = link_to "Delete", @album, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure?' if is_admin
   - if !is_admin
     - if !@auth.albums.include?(@album)
       = link_to "#{number_to_currency(@price)}", purchase_album_path, :class=>'button radius'
-    - else
-      .own You own this album.
-      = button_to "Refund", refund_album_path(@album.id), :class=>'button radius tiny', :confirm=>'You will only receive a 70% refund. Continue?'
+.four.columns
+  = image_tag @album.image
+  - if @auth.albums.include?(@album)
+    = button_to "You own this album", nil, :class=>'button radius success', :style=>'margin-bottom: 10px;'
+    = button_to "Refund", refund_album_path(@album.id), :class=>'button radius tiny', :confirm=>'You will only receive a 70% refund. Continue?'
