@@ -1,0 +1,15 @@
+.row
+  .ten.columns
+    %h3 Confirm Purchase
+.row
+  .four.columns
+    = image_tag @album.image
+  .eight.columns
+    %h4= @album.name
+    %h5= @album.artists.first.name
+    %h5= "Price: " + number_to_currency(@price)
+    %h6 Songs
+    %ul
+      - @album.songs.each do |song|
+        %li= song.name
+    = button_to "Purchase", buy_album_path, :class=>'button radius'

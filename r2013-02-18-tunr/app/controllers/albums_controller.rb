@@ -18,6 +18,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @price = @album.songs.map {|song| song.price}.compact.reduce(:+)
   end
 
   def edit
@@ -30,6 +31,36 @@ class AlbumsController < ApplicationController
     @album.update_attributes(params[:album])
     @album.save
     redirect_to @album
+  end
+
+  def purchase
+    @album = Album.find(params[:id])
+    @price = @album.songs.map{|song|song.price}.compact.reduce(:+)
+  end
+
+  def buy
+    album = Album.find(params[:id])
+    album_price = album.songs.map {|song| song.price}.compact.reduce(:+)
+    @auth.balance -= album_price
+    @auth.save
+    @auth.albums << album if !@auth.albums.include?(album)
+    redirect_to root_path
+  end
+
+  def refund
+    album = Album.find(params[:id])
+    album_price = album.songs.map {|song| song.price}.compact.reduce(:+)
+    album.songs.each do |song|
+      @auth.mixtapes.each do |mixtape|
+        if mixtape.songs.include?(song)
+          mixtape.songs.delete(song)
+        end
+      end
+    end
+    @auth.albums.delete(album)
+    @auth.balance += album_price * 0.70
+    @auth.save
+    redirect_to albums_path
   end
 
   def destroy

@@ -15,6 +15,21 @@ R20130218Tunr::Application.routes.draw do
     end
   end
 
+  resources :albums do
+    member do
+      get 'purchase'
+      post 'buy'
+      post 'refund'
+    end
+  end
+
+  resources :mixtapes do
+    member do
+      post 'refund'
+    end
+  end
+
+
   resources :genres, :albums, :artists, :songs, :mixtapes
 
 

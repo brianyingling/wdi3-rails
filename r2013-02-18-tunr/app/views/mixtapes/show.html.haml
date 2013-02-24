@@ -2,8 +2,9 @@
   %h2= @mixtape.name
   %h3 Songs
   %table
+    - form_tag :method=>'post'
     - @mixtape.songs.each do |song|
       %tr
         %td= link_to song.name, song
         %td= audio_tag = audio_tag(song.filename, :controls=>true)
-        %td= link_to "Refund", song, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure?'
+        %td= button_to "Refund", refund_mixtape_path(song.id), :class=>'button radius tiny', :confirm=>"You will only receive 70% of purchase value: #{song.price*0.70}. Continue?", :value=>'Sample value'

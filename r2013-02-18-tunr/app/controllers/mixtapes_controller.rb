@@ -30,7 +30,20 @@ class MixtapesController < ApplicationController
     Mixtape.delete(params[:id])
     redirect_to mixtapes_path
   end
+  def refund
+    @song = Song.find(params[:id])
+    @auth.mixtapes.each do |mixtape|
+      if mixtape.songs.include?(@song)
+        mixtape.songs.delete(@song)
+      end
+    end
+    @auth.balance += (@song.price * 0.70)
+    @auth.save
+    redirect_to mixtapes_path
+  end
+
 end
+
 
 def authenticate
   render :new if @mixtape.nil?

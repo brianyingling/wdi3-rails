@@ -1,11 +1,11 @@
 <!-- Header and Nav -->
 
 <div class="row">
-<div class="three columns">
+<div class="two columns">
   <h1>Tunr</h1>
   <h4>Music The Way You Want It</h4>
 </div>
-<div class="nine columns">
+<div class="ten columns">
   <ul class="nav-bar right">
     <li><%= link_to "Home", root_path %></li>
      <% if @auth.present? && !@auth.is_admin? %>
@@ -14,6 +14,11 @@
         <ul class='flyout' style='display: none;'>
          <%== mixtape_nav %>
          </ul></li>
+       <li class='has-flyout'>
+          <a href=''>Albums</a>
+          <ul class='flyout' style='display: none;'>
+            <%== album_nav %>
+          </ul></li>
       <% end %>
     <li class='has-flyout'>
       <a href="">Browse Music</a>
@@ -23,7 +28,13 @@
           <li><%= link_to('Albums',albums_path) %></li>
           <li><%= link_to('Artists',artists_path) %></li>
           <li><%= link_to('Songs',songs_path) %></li>
-        </ul>
+        </ul></li>
+    <% if @auth.present? %>
+      <li class='has-flyout'>
+        <a href=''><%= @auth.name + "'s" %> Settings</a>
+          <a class='flyout-toggle'><span></span></a>
+          <ul class='flyout' style='display:none;'>
+    <% end %>
           <%== intellinav %>
     </ul>
 

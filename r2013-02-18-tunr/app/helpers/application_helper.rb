@@ -5,12 +5,11 @@ module ApplicationHelper
   def intellinav
     links = ''
     if @auth.present?
-      if @auth.is_admin
-        links += "<li>#{link_to('Users', users_path)}</li>"
-      end
-      links += "<li>#{link_to('Edit',edit_users_path)}</li>"
+      links += "<li>#{link_to('Users', users_path)}</li>" if @auth.is_admin
+      links += "<li>#{link_to('Edit Account',edit_users_path)}</li>"
+      links += "<li>#{link_to('Balance: ' + number_to_currency(@auth.balance), edit_users_path)}</li>"
       links += "<li>#{link_to('Logout ' + @auth.name, login_path, :method=>:delete, :confirm=>'Are you sure?')}</li>"
-      links += "<li>#{number_to_currency(@auth.balance)}</li>"
+
     else
       links += "<li>#{link_to('Create Account', new_user_path)}</li>"
       links += "<li>#{link_to('Login',login_path)}</li>"
@@ -24,5 +23,9 @@ module ApplicationHelper
     links += "<li>#{link_to('Create New',new_mixtape_path)}</li>"
   end
 
-
+  def album_nav
+    links = ''
+    @auth.albums.each {|album| links += "<li>#{link_to(album.name, album)}</li>"}
+    links
+  end
 end

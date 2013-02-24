@@ -6,6 +6,11 @@
   %ul
     - @album.songs.each do |song|
       %li= link_to song.name, song
-  = link_to "Edit", edit_album_path(@album.id), :class=>'button radius tiny'
-  = link_to "Delete", @album, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure?'
-
+  = link_to "Edit", edit_album_path(@album.id), :class=>'button radius tiny' if is_admin
+  = link_to "Delete", @album, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure?' if is_admin
+  - if !is_admin
+    - if !@auth.albums.include?(@album)
+      = link_to "#{number_to_currency(@price)}", purchase_album_path, :class=>'button radius'
+    - else
+      .own You own this album.
+      = button_to "Refund", refund_album_path(@album.id), :class=>'button radius tiny', :confirm=>'You will only receive a 70% refund. Continue?'
