@@ -1,17 +1,18 @@
-
+.one.columns
 .four.columns
   = render(:partial=>'shared/errors',:locals=>{:object=>@user})
   = form_for @user do |f|
-    = f.text_field :name, :autofocus=>true
     = f.label :name
-    = f.text_field :image
+    = f.text_field :name, :autofocus=>true
     = f.label :image
-    = f.text_field :balance, :value => number_to_currency(f.object.balance, :precision => 2)
+    = f.text_field :image
     = f.label :balance
-    = f.password_field :password
+    = f.text_field :balance, :value => number_to_currency(f.object.balance, :precision => 2)
     = f.label :password
-    = f.password_field :password_confirmation
+    = f.password_field :password
     = f.label :password_confirmation
+    = f.password_field :password_confirmation
     = f.submit nil, :class=>'button_radius'
-.eight.columns
+.seven.columns
+  = image_tag(@user.image) if @user.image.present?
 

@@ -44,18 +44,14 @@ class AlbumsController < ApplicationController
     @auth.balance -= album_price
     @auth.save
     @auth.albums << album if !@auth.albums.include?(album)
-    redirect_to root_path
+    redirect_to album
   end
 
   def refund
     album = Album.find(params[:id])
     album_price = album.songs.map {|song| song.price}.compact.reduce(:+)
     album.songs.each do |song|
-      @auth.mixtapes.each do |mixtape|
-        if mixtape.songs.include?(song)
-          mixtape.songs.delete(song)
-        end
-      end
+      @auth.mixtapes.each {|mixtape| mixtape.songs.delete(song) if mixtape.songs.include?(song)}
     end
     @auth.albums.delete(album)
     @auth.balance += album_price * 0.70

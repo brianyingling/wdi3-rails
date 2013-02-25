@@ -1,3 +1,4 @@
+.one.columns
 .five.columns
   %h3= @song.name
   %h4= @song.album.artists.first.name if @song.album
@@ -20,8 +21,8 @@
     -else
       = link_to "You Own This Song", @song, :class=>'button radius success'
 
-.five.columns
-  = image_tag(@song.image, :class=>'song_image  ')
+.three.columns
+  = image_tag(@song.image, :class=>'song_image')
   %h4 Genres
   %ul
     - @song.genres.each do |genre|

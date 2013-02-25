@@ -1,3 +1,25 @@
 img.album_covers {
-    width: 150px;
+    width: 200px;
+    border: 2px solid #000;
+}
+
+.albums {
+  display: inline-block;
+  width: 175px;
+  vertical-align: top;
+  margin: 10px;
+
+}
+.albums img {
+  box-shadow: 2px 2px 5px gray;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.5s ease-out;
+  border: 1px solid #ccc;
+  }
+
+.albums img:hover {
+  box-shadow: 2px 2px 5px yellow;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+
 }
