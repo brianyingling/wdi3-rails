@@ -20,6 +20,7 @@
         .error You need more money in your account to purchase this song.
     -else
       = link_to "You Own This Song", @song, :class=>'button radius success'
+      = audio_tag(@song.filename, :controls=> @auth.nil? || @auth.has_song?(@song))
 
 .three.columns
   = image_tag(@song.image, :class=>'song_image')
@@ -27,7 +28,7 @@
   %ul
     - @song.genres.each do |genre|
       %li= link_to genre.name, genre
-  = audio_tag(@song.filename, :controls=> @auth.nil? || @auth.has_song?(@song))
+
 
 
 
