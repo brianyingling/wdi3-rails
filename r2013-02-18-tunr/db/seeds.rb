@@ -47,7 +47,7 @@ r1.songs << s1 << s2
 r2.songs = [s3]
 a1.songs = [s1, s2]
 a2.songs << s3
-g3.songs [s1, s2, s3]
+g3.songs = [s1, s2, s3]
 
 u1.mixtapes = [m1, m2]
 u3.mixtapes = [m3]

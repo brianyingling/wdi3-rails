@@ -15,17 +15,25 @@
 class User < ActiveRecord::Base
   has_secure_password
   attr_accessible :name, :image, :password, :password_confirmation, :is_admin, :balance
-  has_many :mixtapes
+  has_many :mixtapes, :inverse_of => :user
   has_and_belongs_to_many :albums
   validates :image, :presence => true
   validates :name, :uniqueness => true, :length => {:minimum => 2}
   validates :balance, :numericality => {:greater_than_or_equal_to => 0}
 
+  def songs
+    (mixtape_songs + album_songs).uniq
+  end
+  def mixtape_songs
+    mixtapes.map(&:songs).flatten.uniq
+  end
+  def album_songs
+    albums.map(&:songs).flatten.uniq
+  end
   def has_song?(song)
-    songs = self.mixtapes.map &:songs
-    songs = songs.flatten
-    songs = songs.uniq
-    song.in?(songs)
+    album_songs = self.albums.map(&:songs).flatten.uniq
+    mixtape_songs = self.mixtapes.map(&:songs).flatten.uniq
+    song.in?(mixtape_songs) || song.in?(album_songs)
   end
 
 

@@ -3,3 +3,24 @@
   %ul
   - @auth.mixtapes.each do |mixtape|
     %li= link_to mixtape.name, mixtape
+- elsif @auth.present? && @auth.is_admin
+  %ul{:class=>'sidebar_admin'}
+    %li
+      = "Albums"
+      %ul
+        %li
+          = link_to("New", new_album_path) + " | "
+          = link_to "Edit", albums_path
+    %li
+      = "Artists"
+      %ul
+        %li
+          = link_to("New", new_artist_path) + " | "
+          = link_to("Edit", artists_path)
+    %li
+      = "Songs"
+      %ul
+        %li
+          = link_to("New", new_song_path) + " | "
+          = link_to "Edit", songs_path
+

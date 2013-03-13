@@ -1,5 +1,5 @@
 body {
-  background: url('http://www.hdwallpapersarena.com/wp-content/uploads/2012/05/purple-background-1280x1024.jpg') center fixed;
+  background: url('/assets/purple-background-1280x1024.jpg') center fixed;
   background-size: cover;
   .row {
     background-color: #fff;
@@ -10,101 +10,43 @@ h5.logo {
   margin-top: 0;
 }
 
-
-
-#slide01 {
-  background: url('http://images.sonymusicdigital.com/autoimage/display/zoom/media.sonymusicd2c.com/dda/27646167/84cb6cb7cb165cd646c454ccdd2680e5.jpg/84cb6cb7cb165cd646c454ccdd2680e5');
+#slider {
   width: 1000px;
   height: 400px;
-  position: relative;
-  text-align: right;
-  .title {
-    position: absolute;
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
-    right: 100px;
-    top: 10px;
+
+  .slides {
+    width: 1000px;
+    height: 400px;
+    position: relative;
+    background-size: cover;
+    text-align: right;
+    .title {
+      position: absolute;
+      font-size: 24px;
+      color: #fff;
+      font-weight: bold;
+      right: 100px;
+      top: 10px;
+    }
   }
+
+    #slide01 {background: url('/assets/benfoldsfive.jpg');}
+    #slide02 {background: url('/assets/oasis.jpg');}
+    #slide03 {
+      background: url('/assets/lady-gaga.jpg');
+      .title {
+        font-size: 63px;
+      }
+    }
+    #slide04 {
+      background: url('/assets/aerosmith.jpeg');
+      .title {
+        font-size: 63px;
+      }
+    }
+    #slide05 {background: url('/assets/taylor-swift2.jpg');}
+    #slide06 {background: url('/assets/davematthewsband.jpg');}
 }
-
-#slide02 {
-  background: url('http://weblogs.cltv.com/entertainment/tv/metromix/oasis.jpg');
-  background-size: cover;
-  width: 1000px;
-  height: 400px;
-  position: relative;
-  .title {
-    position: absolute;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    right: 100px;
-    top: 10px;
-  }
-}
-
-#slide03 {
-  background: url('http://cdn03.cdn.justjared.com/wp-content/uploads/2012/12/gaga-stones/lady-gaga-rolling-stones-concert-04.jpg');
-  background-size: cover;
-  width: 1000px;
-  height: 400px;
-  position: relative;
-  .title {
-    position: absolute;
-    color: #fff;
-    font-size: 63px;
-    font-weight: bold;
-    top: 10px;
-  }
-}
-
-#slide04 {
-  background: url('/assets/aerosmith.jpeg');
-  background-size: cover;
-  width: 1000px;
-  height: 400px;
-  position: relative;
-  .title {
-    position: absolute;
-    color: #fff;
-    font-size: 63px;
-    font-weight: bold;
-    top: 10px;
-  }
-}
-
-#slide05 {
-  background: url('/assets/taylor-swift.jpg');
-  background-size: cover;
-  width: 1000px;
-  height: 400px;
-  position: relative;
-  .title {
-    position: absolute;
-    color: #fff;
-    font-size: 63px;
-    font-weight: bold;
-    top: 10px;
-  }
-}
-
-
-#slide06 {
-  background: url('/assets/davematthewsband.jpg');
-  background-size: cover;
-  width: 1000px;
-  height: 400px;
-  position: relative;
-  .title {
-    position: absolute;
-    color: #fff;
-    font-size: 63px;
-    font-weight: bold;
-    top: 10px;
-  }
-}
-
 
 form {
   margin: 0 15px;

@@ -11,7 +11,7 @@
 
 class Mixtape < ActiveRecord::Base
   attr_accessible :name, :user_id
-  belongs_to :user
+  belongs_to :user, :inverse_of => :mixtapes
   has_and_belongs_to_many :songs
 
 end

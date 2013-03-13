@@ -20,4 +20,9 @@ class Song < ActiveRecord::Base
   has_and_belongs_to_many :genres
   has_and_belongs_to_many :mixtapes
   validates :price, :numericality => {:greater_than => 0}, :allow_nil => true
+
+  # def price(purchased_songs)
+  #   (songs.map(&:cost).inject(&:+)) || 0) - purchased_songs.select{|s| s.in?(songs)}.map(&:cost).inject(&+) || 0)
+  # end
+
 end

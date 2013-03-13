@@ -11,7 +11,7 @@
 
 class Artist < ActiveRecord::Base
   attr_accessible :name, :image, :album_ids, :song_ids
-  has_many :songs
+  has_many :songs, :inverse_of => :artist
   has_many :albums, :through => :songs
   validates :name, :uniqueness => true, :presence => true
 end

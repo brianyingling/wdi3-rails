@@ -1,7 +1,7 @@
 .one.columns
 .five.columns
   %h3= @song.name
-  %h4= @song.album.artists.first.name if @song.album
+  %h4= @song.album.artists.first.name if @song.album && @song.album.artists.any?
   %h5= number_to_currency(@song.price)
   = link_to "Edit", edit_song_path(@song.id), :class=>'button radius tiny' if @auth.present? && @auth.is_admin
   = link_to "Delete", @song, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure you want to delete?' if is_admin
@@ -21,7 +21,8 @@
     -else
       = link_to "You Own This Song", @song, :class=>'button radius success'
       = audio_tag(@song.filename, :controls=> @auth.nil? || @auth.has_song?(@song))
-
+  -else
+    = link_to "Sign In to Buy!", login_path, :class=>'button radius success'
 .three.columns
   = image_tag(@song.image, :class=>'song_image')
   %h4 Genres

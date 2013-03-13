@@ -31,14 +31,11 @@ class MixtapesController < ApplicationController
     redirect_to mixtapes_path
   end
   def refund
-    @song = Song.find(params[:id])
-    @auth.mixtapes.each do |mixtape|
-      if mixtape.songs.include?(@song)
-        mixtape.songs.delete(@song)
-      end
-    end
-    @auth.balance += (@song.price * 0.70)
-    @auth.save
+    song = Song.find(params[:id])
+    if mixtape.songs.include?(song)
+      @auth.mixtapes.each {|mixtape|mixtape.songs.delete(@song)}
+      @auth.balance += (@song.price * 0.70)
+      @auth.save
     redirect_to mixtapes_path
   end
 

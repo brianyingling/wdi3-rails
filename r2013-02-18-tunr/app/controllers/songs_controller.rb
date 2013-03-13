@@ -22,7 +22,8 @@ class SongsController < ApplicationController
     redirect_to songs_path
   end
   def destroy
-    Song.delete(params[:id])
+    song = Song.find(params[:id])
+    song.delete
     redirect_to songs_path
   end
 
@@ -32,12 +33,9 @@ class SongsController < ApplicationController
 
   def buy
     @song = Song.find(params[:id])
-    @auth.balance -= @song.price
-    @song.save
+    @auth.balance -= @song.price if @auth.balance >= @song.price
     @auth.save
-
-    mixtape_ids = params[:song][:mixtape_ids]
-    mixtape_ids.each do |id|
+    params[:song][:mixtape_ids].each do |id|
       mixtape = Mixtape.find(id)
       mixtape.songs << @song
     end
