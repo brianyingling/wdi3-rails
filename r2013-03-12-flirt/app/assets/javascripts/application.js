@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require 'underscore.min.js'
+//= require 'foundation4/js/foundation.min.js'

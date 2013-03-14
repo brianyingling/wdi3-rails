@@ -1,1 +1,6 @@
-= link_to "Register", new_subscriber_path, :id=>'register_btn', :remote=>true
+= link_to "Register", new_subscriber_path, :id=>'register_btn', :remote=>true, :class=>'button radius tiny'
+= link_to "Login", login_path, :remote=>true, :class=>'button radius tiny'
+#button-row.row
+  .large-12.columns
+    #subscriber_form
+    #login_form

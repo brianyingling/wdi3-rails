@@ -1,10 +1,13 @@
-#subscriber_form
-  = form_for @subscriber, :remote=>true do |f|
-    = f.label           :username
-    = f.text_field      :username
-    = f.label           :password
-    = f.password_field  :password
-    = f.label           :password_confirmation
-    = f.password_field  :password_confirmation
-    = f.submit
-    = button_to_function "Cancel", 'cancel_subscriber_form()'
+.row
+  .large-5.columns
+    #user_form
+      = form_for @user, :url => subscribers_path, :remote=>true   do |f|
+        = f.label           :username
+        = f.text_field      :username
+        = f.label           :password
+        = f.password_field  :password
+        = f.label           :password_confirmation
+        = f.password_field  :password_confirmation
+        = f.submit          :class=>'button tiny radius success'
+        = button_to_function "Cancel", 'cancel_subscriber_form()', :class=>'button radius alert tiny'
+  .large-7.columns
